@@ -14,7 +14,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     String rootNote;
-    public NoteViewModel mViewModel;
+    String testRoot = "C";
+    String viewScale;
     Button btn;
     TextView noteView;
     Chromatic mChromatic;
@@ -25,24 +26,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //ViewModel instance
-        mViewModel = new ViewModelProvider(this, new ViewModelProvider.Factory() {
-            @NonNull
-            @Override
-            public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-                return null;
-            }
-        }).get(NoteViewModel.class);
-        //Displays data from mViewModel
-        displayScale(mViewModel.selectedScale);
-        //Button onCLick listener
+        btn = findViewById(R.id.scale_button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mChromatic = new Chromatic(rootNote);
+                mChromatic = new Chromatic(testRoot);
                 mScale = new Scale(mChromatic, 1);
-                mViewModel.selectedScale = mScale.getScaleString();
-                displayScale(mViewModel.selectedScale);
+                viewScale = mScale.getScaleString();
+                displayScale(viewScale);
             }
         });
 

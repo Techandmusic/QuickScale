@@ -30,7 +30,7 @@ public class Scale {
                 newScale.add(scaleMap.get("majorSeventh"));
 
             default:
-                scaleString = "Scale is empty";
+                scaleString = "";
         }
 
         for (int i = 0; i < newScale.size(); ++i) {
