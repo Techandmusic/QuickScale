@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Quick Scale</string>
+    <string-array name="keys">
+        <item>C</item>
+        <item>C#</item>
+        <item>D</item>
+        <item>D#</item>
+        <item>E</item>
+        <item>F</item>
+        <item>F#</item>
+        <item>G</item>
+        <item>G#</item>
+        <item>A</item>
+        <item>Bb</item>
+        <item>B</item>
+    </string-array>
+
+    <string-array name="scales">
+        <item>Major</item>
+        <item>Minor</item>
+        <item>Blues</item>
+        <item>Pentatonic</item>
+        <item>Mixolydian</item>
+    </string-array>
+
+    <string name="major">Major</string>
+    <string name="minor">Minor</string>
+    <string name="blues">Blues</string>
+    <string name="pentatonic">Pentatonic</string>
+
+    <string name="select_message">Choose Root Note:</string>
+    <string name="button_text">Generate Scale</string>
+    <string name="radio_button_default">Please choose the tonality from radio buttons</string>
+</resources>
