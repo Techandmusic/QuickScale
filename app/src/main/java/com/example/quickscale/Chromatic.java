@@ -49,11 +49,11 @@ public class Chromatic {
         buildChromatic(scalePositions, octave);
     }
 
-    public ArrayList<String> buildOctave(String key) {
+    public void buildOctave(String key) {
         while (octave.get(0) != key) {
             toEnd();
         }
-        return octave;
+        //return octave;
     }
 
     public void toEnd() {

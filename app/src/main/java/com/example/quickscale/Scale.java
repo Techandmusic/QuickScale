@@ -2,7 +2,7 @@ package com.example.quickscale;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.StringJoiner;
+
 
 public class Scale {
     private Map<String, String> scaleMap;
