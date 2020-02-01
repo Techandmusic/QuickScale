@@ -10,15 +10,15 @@ public class Chromatic {
             add("C");
             add("C#");
             add("D");
-            add("D#");
+            add("D#/Eb");
             add("E");
             add("F");
+            add("F#/Gb");
             add("G");
-            add("G#");
+            add("G#/Ab");
             add("A");
-            add("Bb");
+            add("A#/Bb");
             add("B");
-            add("B#");
         }
     };
 

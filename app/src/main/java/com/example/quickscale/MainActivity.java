@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     String testRoot = "C";
     String viewScale;
     Button btn;
-    TextView noteView;
     Chromatic mChromatic;
     Scale mScale;
     //This is pre testing
