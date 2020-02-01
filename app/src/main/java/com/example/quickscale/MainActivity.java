@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     String rootNote;
-    String testRoot = "C";
+    String testRoot = "D";
     String viewScale;
     Button btn;
     Chromatic mChromatic;

@@ -8,7 +8,7 @@ public class Chromatic {
     private ArrayList<String> octave = new ArrayList<String>() {
         {
             add("C");
-            add("C#");
+            add("C#/Db");
             add("D");
             add("D#/Eb");
             add("E");
