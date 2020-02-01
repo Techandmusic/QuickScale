@@ -42,4 +42,8 @@ public class Scale {
 
         return scaleString;
     }
+
+    public String getScaleString() {
+        return scaleString;
+    }
 }
