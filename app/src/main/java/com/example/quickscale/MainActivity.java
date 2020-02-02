@@ -14,12 +14,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
 
     String rootNote;
-    String testRoot = "D";
-    int scaleType;
-    String viewScale;
+    String testRoot = "F";
+    int scaleType = 0;
+    String viewScale = "";
     Button btn;
     Chromatic mChromatic;
     Scale mScale;
@@ -37,11 +37,35 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         noteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ArrayAdapter<CharSequence> scaleAdapter = ArrayAdapter.createFromResource(this, R.array.scales, android.R.layout.simple_spinner_item);
         scaleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting separate onItemSelectedListeners for each adapter
+        //Problem is most likely in one of these
+        AdapterView.OnItemSelectedListener noteListener = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                rootNote = (String) parent.getItemAtPosition(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                rootNote = (String) parent.getItemAtPosition(0);
+            }
+        };
+        AdapterView.OnItemSelectedListener scaleListener = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                scaleType = (int) position;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                scaleType = 0;
+            }
+        };
         //Setting adapters and onItemSelectedListeners to spinners
         noteSpinner.setAdapter(noteAdapter);
-        noteSpinner.setOnItemSelectedListener(this);
+        noteSpinner.setOnItemSelectedListener(noteListener);
         scaleSpinner.setAdapter(scaleAdapter);
-        scaleSpinner.setOnItemSelectedListener(this);
+        scaleSpinner.setOnItemSelectedListener(scaleListener);
 
         //Button assignment and onCLickListener
         btn = findViewById(R.id.scale_button);
@@ -49,9 +73,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View v) {
                 //clearScale();
-                mChromatic = new Chromatic(testRoot);
-                mScale = new Scale(mChromatic, scaleType);
+                mChromatic = new Chromatic(rootNote);
+                mScale = new Scale(mChromatic, 0);
                 viewScale = mScale.getScaleString();
+                //viewScale = "This is a test";
                 displayScale(viewScale);
             }
         });
@@ -72,15 +97,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        rootNote = (String) parent.getItemAtPosition(position);
-        scaleType = position;
-    }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        rootNote = "C";
-        scaleType = 1;
-    }
 }
