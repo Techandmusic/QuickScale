@@ -39,12 +39,10 @@ public class Chromatic {
         }
     };
 
-    private String key;
-    private String note;
+
     private Map<String, String> chromatic = new HashMap<String, String>();
 
     public Chromatic(String key) {
-        this.key = key;
         buildOctave(key);
         buildChromatic(scalePositions, octave);
     }
@@ -63,10 +61,6 @@ public class Chromatic {
 
     }
 
-    public String getNote(int position) {
-        note = octave.get(position);
-        return note;
-    }
 
     public void buildChromatic(ArrayList<String> notes, ArrayList<String> positions) {
         for (int i = 0; i < octave.size(); ++i) {

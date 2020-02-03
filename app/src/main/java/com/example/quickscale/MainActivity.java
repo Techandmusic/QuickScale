@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Scale string result.";
-    String rootNote;
+    String rootNote = "C";
     //String testRoot = "F";
     String scaleType;
     String viewScale;
@@ -78,12 +78,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //clearScale();
-                mChromatic = new Chromatic(rootNote);
+               // mChromatic = new Chromatic(rootNote);
                // mScale = new Scale(mChromatic, scaleType);
                 //viewScale = mScale.getScaleString();
-
                 //nullStringCheck(viewScale);
-                displayScale("Chromatic successful");
+                displayScale(rootNote + " " + scaleType);
 
 
 
