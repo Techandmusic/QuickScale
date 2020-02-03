@@ -6,23 +6,28 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "Scale string result.";
     String rootNote;
-    String testRoot = "F";
-    int scaleType = 0;
-    String viewScale = "";
+    //String testRoot = "F";
+    String scaleType;
+    String viewScale;
     Button btn;
     Chromatic mChromatic;
     Scale mScale;
+    String clicked = "Button was clicked";
+    String report;
 
 
     @Override
@@ -53,12 +58,12 @@ public class MainActivity extends AppCompatActivity {
         AdapterView.OnItemSelectedListener scaleListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                scaleType = (int) position;
+                scaleType = (String) parent.getItemAtPosition(position);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                scaleType = 0;
+                scaleType = (String) parent.getItemAtPosition(0);
             }
         };
         //Setting adapters and onItemSelectedListeners to spinners
@@ -74,10 +79,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //clearScale();
                 mChromatic = new Chromatic(rootNote);
-                mScale = new Scale(mChromatic, 0);
-                viewScale = mScale.getScaleString();
-                //viewScale = "This is a test";
-                displayScale(viewScale);
+               // mScale = new Scale(mChromatic, scaleType);
+                //viewScale = mScale.getScaleString();
+
+                //nullStringCheck(viewScale);
+                displayScale("Chromatic successful");
+
+
+
             }
         });
 
@@ -94,6 +103,23 @@ public class MainActivity extends AppCompatActivity {
     public void clearScale() {
         TextView noteView = findViewById(R.id.noteView);
         noteView.setText("");
+    }
+
+    public String nullStringCheck(String test) {
+        if (test == null) {
+            report = "Scale string is null.";
+        }
+
+        else if (test == "") {
+            report = "Scale string is empty";
+        }
+
+        else {
+            report = "Scale string created successfully";
+        }
+         return report;
+
+
     }
 
 

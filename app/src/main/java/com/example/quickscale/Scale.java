@@ -8,11 +8,11 @@ public class Scale {
     private Map<String, String> scaleMap;
     private ArrayList<String> newScale = new ArrayList<>();
     private String scaleString;
-    private String scaleError;
+   // private String scaleError;
 
 
 
-    public Scale(Chromatic chromatic, int tonality) {
+    public Scale(Chromatic chromatic, String tonality) {
 
         scaleMap = chromatic.getChromatic();
         makeScale(tonality);
@@ -20,9 +20,9 @@ public class Scale {
 
     }
 
-    public String makeScale(int scaleType) {
+    public ArrayList<String> makeScale(String scaleType) {
         switch (scaleType) {
-            case 0:
+            case "Major":
                 //Major scale
                 newScale.add(scaleMap.get("root"));
                 newScale.add(scaleMap.get("majorSecond"));
@@ -31,7 +31,8 @@ public class Scale {
                 newScale.add(scaleMap.get("perfectFifth"));
                 newScale.add(scaleMap.get("majorSixth"));
                 newScale.add(scaleMap.get("majorSeventh"));
-            case 1:
+                break;
+            case "Minor":
                 //Minor scale
                 newScale.add(scaleMap.get("root"));
                 newScale.add(scaleMap.get("majorSecond"));
@@ -40,18 +41,26 @@ public class Scale {
                 newScale.add(scaleMap.get("perfectFifth"));
                 newScale.add(scaleMap.get("minorSixth"));
                 newScale.add(scaleMap.get("minorSeventh"));
+                break;
 
 
             default:
-                scaleString = "";
+                break;
+
         }
 
+
+        scaleToString(newScale);
+        return newScale;
+
+
+
+    }
+
+    public String scaleToString(ArrayList<String> scale) {
         for (int i = 0; i < newScale.size(); ++i) {
-            scaleString += newScale.get(i) +", ";
+            scaleString += newScale.get(i) + ", ";
         }
-
-        scaleString = "This is a test of the scale";
-
 
         return scaleString;
     }
