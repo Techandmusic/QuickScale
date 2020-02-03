@@ -39,19 +39,21 @@ public class Chromatic {
         }
     };
 
+    private ArrayList<String> newOctave;
+
 
     private Map<String, String> chromatic = new HashMap<String, String>();
 
     public Chromatic(String key) {
-        buildOctave(key);
-        buildChromatic(scalePositions, octave);
+        buildOctave(key, octave);
+        buildChromatic(scalePositions, newOctave);
     }
 
-    public void buildOctave(String key) {
-        while (octave.get(0) != key) {
+    public void buildOctave(String key, ArrayList<String> Octave) {
+        while (Octave.get(0) != key) {
             toEnd();
         }
-        //return octave;
+        setNewOctave(Octave);
     }
 
     public void toEnd() {
@@ -63,7 +65,7 @@ public class Chromatic {
 
 
     public void buildChromatic(ArrayList<String> notes, ArrayList<String> positions) {
-        for (int i = 0; i < octave.size(); ++i) {
+        for (int i = 0; i < newOctave.size(); ++i) {
             chromatic.put(notes.get(i), positions.get(i));
         }
     }
@@ -73,4 +75,7 @@ public class Chromatic {
     }
 
 
+    public void setNewOctave(ArrayList<String> newOctave) {
+        this.newOctave = newOctave;
+    }
 }

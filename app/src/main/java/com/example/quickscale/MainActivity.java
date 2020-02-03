@@ -78,11 +78,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //clearScale();
-               // mChromatic = new Chromatic(rootNote);
+                mChromatic = new Chromatic("C");
                // mScale = new Scale(mChromatic, scaleType);
                 //viewScale = mScale.getScaleString();
                 //nullStringCheck(viewScale);
-                displayScale(rootNote + " " + scaleType);
+                displayScale("Chromatic was successful.");
 
 
 
