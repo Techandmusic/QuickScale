@@ -18,9 +18,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "Scale string result.";
+
     String rootNote = "C";
-    //String testRoot = "F";
+    String testRoot = "F";
     String scaleType;
     String viewScale;
     Button btn;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Spinners for root note and scale type
-        Spinner noteSpinner = findViewById(R.id.note_spinner);
+        final Spinner noteSpinner = findViewById(R.id.note_spinner);
         Spinner scaleSpinner = findViewById(R.id.scale_spinner);
         //Creating spinner menus from ArrayAdapter
         ArrayAdapter<CharSequence> noteAdapter = ArrayAdapter.createFromResource(this, R.array.keys, android.R.layout.simple_spinner_item);
@@ -47,12 +47,14 @@ public class MainActivity extends AppCompatActivity {
         AdapterView.OnItemSelectedListener noteListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                rootNote = (String) parent.getItemAtPosition(position);
+                //rootNote = parent.getItemAtPosition(position).toString();
+                //mChromatic = new Chromatic(rootNote);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                rootNote = (String) parent.getItemAtPosition(0);
+                //rootNote = parent.getItemAtPosition(0).toString();
+                //mChromatic = new Chromatic(rootNote);
             }
         };
         AdapterView.OnItemSelectedListener scaleListener = new AdapterView.OnItemSelectedListener() {
@@ -77,12 +79,10 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //clearScale();
-                mChromatic = new Chromatic("C");
-               // mScale = new Scale(mChromatic, scaleType);
-                //viewScale = mScale.getScaleString();
-                //nullStringCheck(viewScale);
-                displayScale("Chromatic was successful.");
+                mChromatic = new Chromatic(rootNote);
+                mScale = new Scale(mChromatic, scaleType);
+                viewScale = mScale.getScaleString();
+                displayScale(viewScale);
 
 
 
