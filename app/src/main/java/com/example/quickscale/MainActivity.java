@@ -38,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
         final Spinner noteSpinner = findViewById(R.id.note_spinner);
         Spinner scaleSpinner = findViewById(R.id.scale_spinner);
         //Creating spinner menus from ArrayAdapter
+        //ArrayAdapter for notes
         ArrayAdapter<CharSequence> noteAdapter = ArrayAdapter.createFromResource(this, R.array.keys, android.R.layout.simple_spinner_item);
         noteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //ArrayAdapter for scales
         ArrayAdapter<CharSequence> scaleAdapter = ArrayAdapter.createFromResource(this, R.array.scales, android.R.layout.simple_spinner_item);
         scaleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting separate onItemSelectedListeners for each adapter
@@ -47,25 +49,27 @@ public class MainActivity extends AppCompatActivity {
         AdapterView.OnItemSelectedListener noteListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //rootNote = parent.getItemAtPosition(position).toString();
+                rootNote = (String) parent.getItemAtPosition(position);
                 //mChromatic = new Chromatic(rootNote);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                //rootNote = parent.getItemAtPosition(0).toString();
+                rootNote = (String) parent.getItemAtPosition(0);
                 //mChromatic = new Chromatic(rootNote);
             }
         };
         AdapterView.OnItemSelectedListener scaleListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                scaleType = (String) parent.getItemAtPosition(position);
+                //scaleType = (String) parent.getItemAtPosition(position);
+
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                scaleType = (String) parent.getItemAtPosition(0);
+                //scaleType = (String) parent.getItemAtPosition(0);
+
             }
         };
         //Setting adapters and onItemSelectedListeners to spinners
