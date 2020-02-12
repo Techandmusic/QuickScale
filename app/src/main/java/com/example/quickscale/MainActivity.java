@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Scale mScale;
     String clicked = "Button was clicked";
     String report;
-
+    //Last state before rewrite
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
