@@ -42,6 +42,31 @@ public class Scale {
                 newScale.add(scaleMap.get("minorSixth"));
                 newScale.add(scaleMap.get("minorSeventh"));
                 break;
+            case "Blues":
+                //Blues scale
+                newScale.add(scaleMap.get("root"));
+                newScale.add(scaleMap.get("minorThird"));
+                newScale.add(scaleMap.get("perfectFourth"));
+                newScale.add(scaleMap.get("flatFifth"));
+                newScale.add(scaleMap.get("perfectFifth"));
+                newScale.add(scaleMap.get("minorSeventh"));
+                break;
+            case "Major Pentatonic":
+                //Major Pentatonic scale
+                newScale.add(scaleMap.get("root"));
+                newScale.add(scaleMap.get("majorSecond"));
+                newScale.add(scaleMap.get("majorThird"));
+                newScale.add(scaleMap.get("perfectFifth"));
+                newScale.add(scaleMap.get("majorSixth"));
+                break;
+            case "Minor Pentatonic":
+                //Minor Pentatonic scale
+                newScale.add(scaleMap.get("root"));
+                newScale.add(scaleMap.get("minorThird"));
+                newScale.add(scaleMap.get("perfectFourth"));
+                newScale.add(scaleMap.get("perfectFifth"));
+                newScale.add(scaleMap.get("minorSeventh"));
+                break;
             case "Mixolydian":
                 //Mixolydian mode
                 newScale.add(scaleMap.get("root"));
@@ -52,6 +77,7 @@ public class Scale {
                 newScale.add(scaleMap.get("majorSixth"));
                 newScale.add(scaleMap.get("minorSeventh"));
                 break;
+
 
 
             default:

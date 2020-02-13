@@ -19,7 +19,8 @@
         <item>Major</item>
         <item>Minor</item>
         <item>Blues</item>
-        <item>Pentatonic</item>
+        <item>Major Pentatonic</item>
+        <item>Minor Pentatonic</item>
         <item>Mixolydian</item>
     </string-array>
 
