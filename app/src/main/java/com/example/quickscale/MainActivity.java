@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onClick(View v) {
                 mChromatic = new Chromatic(rootNote);
                 mScale = new Scale(mChromatic, scaleType);
+                String finalScale = mScale.getScaleString();
+                mViewModel.setScaleNotes(finalScale);
+                displayScale(mViewModel.getScaleNotes());
+
 
 
             }
