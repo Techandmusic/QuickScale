@@ -8,8 +8,6 @@ public class Scale {
     private Map<String, String> scaleMap;
     private ArrayList<String> newScale = new ArrayList<>();
     private String scaleString = "";
-   // private String scaleError;
-
 
 
     public Scale(Chromatic chromatic, String tonality) {
@@ -79,7 +77,6 @@ public class Scale {
                 break;
 
 
-
             default:
                 newScale.add(scaleMap.get("root"));
                 break;
@@ -89,7 +86,6 @@ public class Scale {
 
         scaleToString(newScale);
         return newScale;
-
 
 
     }

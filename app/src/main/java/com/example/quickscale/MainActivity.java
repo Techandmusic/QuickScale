@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
 
-        //Specify layouts to use in Spinners
 
 
         //Setting OnItemSelectedListener for each Spinner
@@ -50,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         scaleTypeSpinner.setOnItemSelectedListener(this);
         //Set button resource ID
         button = findViewById(R.id.scale_button);
+        //Button OnClickListener
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 displayScale(mViewModel.getScaleNotes());
 
 
-
             }
         });
 
@@ -69,21 +68,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void populateRootNoteSpinner() {
         //Create spinner for root note
-        rootNoteSpinner = (Spinner) findViewById(R.id.note_spinner);
+        rootNoteSpinner = findViewById(R.id.note_spinner);
         //Create ArrayAdapter for rootNoteSpinner
         ArrayAdapter<CharSequence> noteAdapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_dropdown_item, notes);
         noteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         rootNoteSpinner.setAdapter(noteAdapter);
     }
-     public void populateScaleTypeSpinner() {
-         //Create Spinner for scale type
-         scaleTypeSpinner = (Spinner) findViewById(R.id.scale_spinner);
-         //Create ArrayAdapter for scaleTypeSpinner
-         ArrayAdapter<CharSequence> scaleAdapter = ArrayAdapter.createFromResource(this, R.array.scales, android.R.layout.simple_spinner_item);
-         scaleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-         scaleTypeSpinner.setAdapter(scaleAdapter);
-     }
 
+    public void populateScaleTypeSpinner() {
+        //Create Spinner for scale type
+        scaleTypeSpinner = findViewById(R.id.scale_spinner);
+        //Create ArrayAdapter for scaleTypeSpinner
+        ArrayAdapter<CharSequence> scaleAdapter = ArrayAdapter.createFromResource(this, R.array.scales, android.R.layout.simple_spinner_item);
+        scaleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        scaleTypeSpinner.setAdapter(scaleAdapter);
+    }
 
 
     public void displayScale(String scales) {
