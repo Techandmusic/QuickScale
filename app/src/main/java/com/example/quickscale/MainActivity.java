@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public Chromatic mChromatic;
     public Scale mScale;
     public TextView scaleView;
-    public String[] notes = {"C", "C#/Db", "D"};
+    public String[] notes = {"C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

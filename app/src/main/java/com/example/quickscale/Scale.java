@@ -7,7 +7,7 @@ import java.util.Map;
 public class Scale {
     private Map<String, String> scaleMap;
     private ArrayList<String> newScale = new ArrayList<>();
-    private String scaleString;
+    private String scaleString = "";
    // private String scaleError;
 
 
@@ -16,7 +16,7 @@ public class Scale {
 
         scaleMap = chromatic.getChromatic();
         makeScale(tonality);
-        //scaleString = "This scale is in " + scaleMap.get("root");
+
 
     }
 
@@ -42,9 +42,20 @@ public class Scale {
                 newScale.add(scaleMap.get("minorSixth"));
                 newScale.add(scaleMap.get("minorSeventh"));
                 break;
+            case "Mixolydian":
+                //Mixolydian mode
+                newScale.add(scaleMap.get("root"));
+                newScale.add(scaleMap.get("majorSecond"));
+                newScale.add(scaleMap.get("majorThird"));
+                newScale.add(scaleMap.get("perfectFourth"));
+                newScale.add(scaleMap.get("perfectFifth"));
+                newScale.add(scaleMap.get("majorSixth"));
+                newScale.add(scaleMap.get("minorSeventh"));
+                break;
 
 
             default:
+                newScale.add(scaleMap.get("root"));
                 break;
 
         }
