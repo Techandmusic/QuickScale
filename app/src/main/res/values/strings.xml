@@ -30,7 +30,7 @@
     <string name="pentatonic">Pentatonic</string>
 
     <string name="select_message">Choose Root Note:</string>
-    <string name="button_text">Generate Scale</string>
+    <string name="button_text">Get Notes</string>
     <string name="radio_button_default">Please choose the tonality from radio buttons</string>
     <string name="Clicked">Button was clicked</string>
 </resources>

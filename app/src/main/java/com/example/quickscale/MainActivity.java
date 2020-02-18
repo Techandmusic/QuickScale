@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //Create spinner for root note
         rootNoteSpinner = findViewById(R.id.note_spinner);
         //Create ArrayAdapter for rootNoteSpinner
-        ArrayAdapter<CharSequence> noteAdapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_dropdown_item, notes);
-        noteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> noteAdapter = new ArrayAdapter<CharSequence>(this, R.layout.spinner_item, notes);
+        noteAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         rootNoteSpinner.setAdapter(noteAdapter);
     }
 
@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //Create Spinner for scale type
         scaleTypeSpinner = findViewById(R.id.scale_spinner);
         //Create ArrayAdapter for scaleTypeSpinner
-        ArrayAdapter<CharSequence> scaleAdapter = ArrayAdapter.createFromResource(this, R.array.scales, android.R.layout.simple_spinner_item);
-        scaleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> scaleAdapter = ArrayAdapter.createFromResource(this, R.array.scales, R.layout.spinner_item);
+        scaleAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         scaleTypeSpinner.setAdapter(scaleAdapter);
     }
 

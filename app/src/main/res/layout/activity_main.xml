@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorBackground"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/medium_spacing"
         android:text="@string/select_message"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorText"
         android:textSize="@dimen/large_text"
         android:textStyle="bold" />
 
@@ -22,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/select"
+        android:textColor="@color/colorText"
         android:layout_margin="@dimen/medium_spacing"
         android:padding="@dimen/small_spacing" />
 
@@ -30,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/note_spinner"
+        android:textColor="@color/colorText"
         android:layout_margin="@dimen/medium_spacing"
         android:padding="@dimen/small_spacing" />
 
@@ -50,6 +53,7 @@
         android:layout_below="@id/scale_button"
         android:layout_marginLeft="@dimen/medium_spacing"
         android:layout_marginRight="@dimen/medium_spacing"
+        android:textColor="@color/colorText"
         android:padding="@dimen/small_spacing" />
 
 
