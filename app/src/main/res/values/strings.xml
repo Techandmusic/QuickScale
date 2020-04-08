@@ -17,7 +17,9 @@
 
     <string-array name="scales">
         <item>Major</item>
-        <item>Minor</item>
+        <item>Natural Minor</item>
+        <item>Harmonic Minor</item>
+        <item>Melodic Minor</item>
         <item>Blues</item>
         <item>Major Pentatonic</item>
         <item>Minor Pentatonic</item>

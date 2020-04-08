@@ -30,8 +30,8 @@ public class Scale {
                 newScale.add(scaleMap.get("majorSixth"));
                 newScale.add(scaleMap.get("majorSeventh"));
                 break;
-            case "Minor":
-                //Minor scale
+            case "Natural Minor":
+                //Natural Minor scale
                 newScale.add(scaleMap.get("root"));
                 newScale.add(scaleMap.get("majorSecond"));
                 newScale.add(scaleMap.get("minorThird"));
@@ -39,6 +39,26 @@ public class Scale {
                 newScale.add(scaleMap.get("perfectFifth"));
                 newScale.add(scaleMap.get("minorSixth"));
                 newScale.add(scaleMap.get("minorSeventh"));
+                break;
+            case "Harmonic Minor":
+                //Harmonic Minor scale
+                newScale.add(scaleMap.get("root"));
+                newScale.add(scaleMap.get("majorSecond"));
+                newScale.add(scaleMap.get("minorThird"));
+                newScale.add(scaleMap.get("perfectFourth"));
+                newScale.add(scaleMap.get("perfectFifth"));
+                newScale.add(scaleMap.get("minorSixth"));
+                newScale.add(scaleMap.get("majorSeventh"));
+                break;
+            case "Melodic Minor":
+                //Melodic Minor scale
+                newScale.add(scaleMap.get("root"));
+                newScale.add(scaleMap.get("majorSecond"));
+                newScale.add(scaleMap.get("minorThird"));
+                newScale.add(scaleMap.get("perfectFourth"));
+                newScale.add(scaleMap.get("perfectFifth"));
+                newScale.add(scaleMap.get("majorSixth"));
+                newScale.add(scaleMap.get("majorSeventh"));
                 break;
             case "Blues":
                 //Blues scale
